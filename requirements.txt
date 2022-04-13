@@ -1,2 +1,3 @@
 django==2.2.27
 djangorestframework==3.9.2
+jedi==0.18.1
