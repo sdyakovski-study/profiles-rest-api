@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from profiles_api.views import HelloAPIView
 
+# adding my hello view test in 2 ways:
+# - as a Class-based view directly
+# - including the profiles_api app's urls configuration.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hello/', HelloAPIView.as_view()),
+    path('api/', include('profiles_api.urls'))
 ]
